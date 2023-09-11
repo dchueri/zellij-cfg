@@ -1,0 +1,43 @@
+layout {
+  cwd "~/projects"
+  default_tab_template {
+    pane size=1 borderless=true {
+      plugin location="zellij:tab-bar"
+    }
+    children
+    pane size=1 borderless=true{
+      plugin location="zellij:status-bar"
+    } 
+  }
+  tab name="Running..." split_direction="horizontal"{
+    pane name="Master" {
+      command "yarn"
+      args "dev"
+      cwd "api-master"
+    }
+    pane name="Backend" {
+      command "yarn"
+      args "dev"
+      cwd "frete/app-checkstore-frete"
+    }
+    pane name="Frontend" {
+      command "yarn"
+      args "dev"
+      cwd "frete/front-checkstore-frete"
+    }
+  }
+  tab name="Back" borderless=true {
+    pane borderless=true {
+      command "lvim"
+      args "."
+      cwd "frete/app-checkstore-frete"
+    }
+  }
+  tab name="Front" borderless=true {
+    pane borderless=true {
+      command "lvim"
+      args "."
+      cwd "frete/front-checkstore-frete"
+    }
+  }
+} 
