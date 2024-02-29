@@ -1,5 +1,5 @@
-layout {
-  cwd "./projects"
+layout  name="App WH"{
+  cwd "~/projects"
   default_tab_template {
     pane size=1 borderless=true {
       plugin location="zellij:tab-bar"
@@ -9,35 +9,34 @@ layout {
       plugin location="zellij:status-bar"
     } 
   }
-  tab name="Running..." split_direction="horizontal"{
-    pane name="Master" {
-      command "yarn"
-      args "dev"
-      cwd "api-master"
+  tab name="Running..." split_direction="horizontal" focus=true{
+    pane name="Database" {
+      command "docker"
+      args "start" "-a" "mongodb"
     }
     pane name="Backend" {
-      command "yarn"
-      args "dev"
-      cwd "logistica/backend/"
+      command "bun"
+      args "start"
+      cwd "whathave/server"
     }
     pane name="Frontend" {
-      command "yarn"
+      command "bun"
       args "dev"
-      cwd "logistica/frontend/"
+      cwd "whathave/client"
     }
   }
   tab name="Back" borderless=true {
     pane borderless=true {
       command "lvim"
       args "."
-      cwd "logistica/backend/"
+      cwd "whathave/server"
     }
   }
   tab name="Front" borderless=true {
     pane borderless=true {
       command "lvim"
       args "."
-      cwd "logistica/frontend/"
+      cwd "whathave/client"
     }
   }
 } 

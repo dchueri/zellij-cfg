@@ -9,11 +9,17 @@ layout {
       plugin location="zellij:status-bar"
     } 
   }
-  tab name="Running..." split_direction="horizontal"{
-    pane name="Master" {
-      command "yarn"
-      args "dev"
-      cwd "api-master"
+  tab name="Running..." split_direction="horizontal" focus=true {
+    pane split_direction="vertical" {
+      pane name="Master" {
+        command "yarn"
+        args "dev"
+        cwd "api-master"
+      }
+      pane name="Database" {
+        command "docker"
+        args "start" "-a" "mongodb"
+      }
     }
     pane name="Backend" {
       command "yarn"

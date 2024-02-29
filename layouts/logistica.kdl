@@ -10,40 +10,34 @@ layout {
     } 
   }
   tab name="Running..." split_direction="horizontal" focus=true {
-    pane split_direction="vertical" {
-      pane name="Master" {
-        command "yarn"
-        args "dev"
-        cwd "api-master"
-      }
-      pane name="Database" {
-        command "docker"
-        args "start" "-a" "mongodb"
-      }
+    pane name="Master" {
+      command "yarn"
+      args "dev"
+      cwd "api-master"
     }
     pane name="Backend" {
       command "yarn"
       args "dev"
-      cwd "interpreter/backend-interpreter/"
+      cwd "logistica/backend/"
     }
     pane name="Frontend" {
       command "yarn"
       args "dev"
-      cwd "interpreter/frontend-interpreter/"
+      cwd "logistica/frontend/"
     }
   }
   tab name="Back" borderless=true {
     pane borderless=true {
       command "lvim"
       args "."
-      cwd "interpreter/backend-interpreter"
+      cwd "logistica/backend/"
     }
   }
   tab name="Front" borderless=true {
     pane borderless=true {
       command "lvim"
       args "."
-      cwd "interpreter/frontend-interpreter"
+      cwd "logistica/frontend/"
     }
   }
 } 
