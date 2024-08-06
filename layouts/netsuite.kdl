@@ -12,27 +12,15 @@ layout {
   tab name="Running..." split_direction="horizontal" focus=true {
     pane name="Backend" {
       command "yarn"
-      args "dev"
-      cwd "fullcomm/backend-start/"
-    }
-    pane name="Frontend" {
-      command "yarn"
-      args "start"
-      cwd "fullcomm/cms/"
+      args "start:dev"
+      cwd "netsuite-integration/"
     }
   }
   tab name="Back" borderless=true {
     pane borderless=true {
       command "lvim"
       args "."
-      cwd "fullcomm/backend-start/"
-    }
-  }
-  tab name="Front" borderless=true {
-    pane borderless=true {
-      command "lvim"
-      args "."
-      cwd "fullcomm/cms/"
+      cwd "netsuite-integration/"
     }
   }
 } 

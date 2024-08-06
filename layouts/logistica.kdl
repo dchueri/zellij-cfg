@@ -10,20 +10,20 @@ layout {
     } 
   }
   tab name="Running..." split_direction="horizontal" focus=true {
-    pane name="Master" {
-      command "yarn"
-      args "dev"
-      cwd "api-master"
-    }
     pane name="Backend" {
       command "yarn"
       args "dev"
       cwd "logistica/backend/"
     }
+    pane name="Flow" {
+      command "yarn"
+      args "dev"
+      cwd "logistica/flow/"
+    }
     pane name="Frontend" {
       command "yarn"
       args "dev"
-      cwd "logistica/frontend/"
+      cwd "logistica/front_novo_oms/"
     }
   }
   tab name="Back" borderless=true {
@@ -33,11 +33,18 @@ layout {
       cwd "logistica/backend/"
     }
   }
+  tab name="Flow" borderless=true {
+    pane borderless=true {
+      command "lvim"
+      args "."
+      cwd "logistica/flow/"
+    }
+  }
   tab name="Front" borderless=true {
     pane borderless=true {
       command "lvim"
       args "."
-      cwd "logistica/frontend/"
+      cwd "logistica/front_novo_oms/"
     }
   }
 } 
